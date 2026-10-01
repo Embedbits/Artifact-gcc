@@ -2,12 +2,12 @@ set(GCC_CURRENT_LIST_DIR ${CMAKE_CURRENT_LIST_DIR})
 #------------------------------------------------------------------------------#
 # Returns artifact version.
 #
-# The name of function must consist of folder name (doxygen) and postfix 
+# The name of function must consist of folder name (gcc) and postfix 
 # (_GetArtifactVersion). Otherwise the buildprocess will fail.  
 #
 # ARTIFACT_VERSION [out]: Version of artifact in format X.Y.Z
 #------------------------------------------------------------------------------#
-function(doxygen_GetArtifactVersion RET_VERSION)
+function(gcc_GetArtifactVersion RET_VERSION)
 
     # Execute the gcc command to get its version
     execute_process(
@@ -26,12 +26,12 @@ endfunction()
 #------------------------------------------------------------------------------#
 # Initialize artifact for build.
 #
-# The name of function must consist of folder name (doxygen) and postfix 
+# The name of function must consist of folder name (gcc) and postfix 
 # (_ArtifactInstall). Otherwise the buildprocess will fail.  
 #
 # ARTIFACT_BIN_PATH_ARG [in]: Path to the binary part of artifact
 #------------------------------------------------------------------------------#
-function(doxygen_ArtifactInit ARTIFACT_BIN_PATH_ARG)
+function(gcc_ArtifactInit ARTIFACT_BIN_PATH_ARG)
 
     if(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Windows")
 
